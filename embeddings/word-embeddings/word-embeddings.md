@@ -42,10 +42,19 @@ There are different ways to compute word embeddings:
    * **CBOW** - Continuous bag-of-words
      * Predicting current word based on context
      * Order of words does not influence prediction!
-   * **Skip Ngram** - Continuous skip-gram
+     * Several times faster to train than the skip-gram, slightly better accuracy for the frequent words
+   * **SG** - Continuous Skip-gram
      * Predicting surrounding context by given word
+     * Works well with small amount of the training data, represents well even rare words or phrases
    * "CBOW is faster while skip-gram is slower but does a better job for infrequent words."
    * ![cbow-skipgram](cbow-skipgram.png) - [Beyond Word Embeddings](https://towardsdatascience.com/beyond-word-embeddings-part-2-word-vectors-nlp-modeling-from-bow-to-bert-4ebd4711d0ec)
+
+    Implementation:
+   * Sliding window to get context (neighbor) words
+   * For each word, the context words are stored and used in training.
+   * Error is calculated as sum over every error from context and selected words
+   * ![Word2Vec-one-hot](word2vec-one-hot.png) - [Word2Vec using Numpy](https://towardsdatascience.com/an-implementation-guide-to-word2vec-using-numpy-and-google-sheets-13445eebd281)
+
 3. GloVe
    * Same intuition behind the co-occuring matrix used in distributional embeddings, but uses neural methods to decompose the co-occurrence matrix into more expressive and dense word vectors
 4. FastText
@@ -65,3 +74,4 @@ When dealing with vectors, a common way to calculate a similarity score is [cosi
 * [Beyond Word Embeddings](https://towardsdatascience.com/beyond-word-embeddings-part-2-word-vectors-nlp-modeling-from-bow-to-bert-4ebd4711d0ec)
 * [The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/)
 * [GloVe](https://nlp.stanford.edu/projects/glove/)
+* [Word2Vec using Numpy](https://towardsdatascience.com/an-implementation-guide-to-word2vec-using-numpy-and-google-sheets-13445eebd281)
