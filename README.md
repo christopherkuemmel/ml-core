@@ -10,11 +10,14 @@ All the different post, should discuss the ideas in the following topics:
 4. Evaluation - TBD
 5. Production - How can this be applied in production and for which use-cases?
 6. References - Links, Guides, Papers, etc.
+7. Examples - Own implementation of the technology
 
 ### AE - Autoencoder
 
 1. TODO: [AE]
 2. TODO: [VAE]
+
+## MLP/ ANN/ Deep Neural Network
 
 ## CNN - Convolutional Neural Networks
 
@@ -22,7 +25,7 @@ All the different post, should discuss the ideas in the following topics:
 
 ## RNN - Recurrent Neural Networks
 
-1. TODO: [RNN]
+1. [RNN](./rnn/rnn/rnn.md)
 2. TODO: [Sliced RNN]
 3. TODO: [LSTM]
 
@@ -30,15 +33,23 @@ All the different post, should discuss the ideas in the following topics:
 
 1. TODO: [GAN]
 
+## Optimization
+
+1. TODO: [Gradient Descent]
+
 ## Embeddings
 
 1. [Word Embeddings](./embeddings/word-embeddings/word-embeddings.md)
+2. TODO: [Spatial Embeddings]
+
+## Attention
+
+1. TODO: [Attention]
 
 ## Transformer
 
-1. TODO: [Attention]
-2. TODO: [Transformer]
-3. TODO: [Image Transformer]
+1. TODO: [Transformer]
+2. TODO: [Image Transformer]
 
 ## RL - Reinforcement Learning
 
