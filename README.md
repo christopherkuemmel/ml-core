@@ -26,8 +26,9 @@ All the different post, should discuss the ideas in the following topics:
 ## RNN - Recurrent Neural Networks
 
 1. [RNN](./rnn/rnn/rnn.md)
-2. TODO: [Sliced RNN]
-3. TODO: [LSTM]
+2. [LSTM](./rnn/lstm/lstm.md)
+3. [GRU](./rnn/gru/gru.md)
+4. TODO: [Sliced RNN]
 
 ## GAN - Generative Adversarial Networks
 
