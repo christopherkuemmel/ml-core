@@ -10,33 +10,43 @@ To solve the common problem of short-term memory in [RNNs](../rnn/rnn.md), GRUs 
 * Faster calculation than [LSTMs](../lstm/lstm.md)
 * Quite easy implementation
 * Sigmoid in gate is usefull for vanishing gradients
-  * close to 0 -> $c^{<t>} = c^{<t-1>}$
+  <!-- * close to 0 -> $c^{<t>} = c^{<t-1>}$ -->
+  * close to 0 -> ![](https://latex.codecogs.com/svg.latex?c^{<t>}=c^{<t-1>})
 
 ## Concept
 
 The GRU consisting of two gates and one memory cell.
 
-$a$: activation
+*a*: activation
 
-$c$: memory cell || hidden state $h$
+*c*: memory cell || hidden state *h*
 
-$\tilde{c}$: candidate for replacing c || $\tilde{h}$
+<!-- $\tilde{c}$: candidate for replacing c || $\tilde{h}$ -->
+![](https://latex.codecogs.com/svg.latex?\tilde{c}): candidate for replacing *c* || ![](https://latex.codecogs.com/svg.latex?\tilde{h})
 
-$\Gamma_u$: update gate. Decides when to update (most of the time the value will be 0 or 1) || $u$ || $z$
+<!-- $\Gamma_u$: update gate. Decides when to update (most of the time the value will be 0 or 1) || $u$ || $z$ -->
+![](https://latex.codecogs.com/svg.latex?\Gamma_u): update gate. Decides when to update (most of the time the value will be 0 or 1) || *u* || *z*
 
-$\Gamma_r$: relevance gate. How relevant is $c^{<t-1>}$ to $\tilde{c}^{<t>}$ || $r$
+<!-- $\Gamma_r$: relevance gate. How relevant is $c^{<t-1>}$ to $\tilde{c}^{<t>}$ || $r$ -->
+![](https://latex.codecogs.com/svg.latex?\Gamma_r): relevance gate. How relevant is ![](https://latex.codecogs.com/svg.latex?c^{<t-1>}) to ![](https://latex.codecogs.com/svg.latex?\tilde{c}^{<t>}) || *r*
+
 
 ### Calculus
 
-$c^{<t>} = a^{<t>}$
+<!-- $c^{<t>} = a^{<t>}$ -->
+![](https://latex.codecogs.com/svg.latex?c^{<t>}=a^{<t>})
 
-$\tilde{c}^{<t>} = tanh(Wc[\Gamma_r * c^{<t-1>}, x^{<t>}] + bc)$
+<!-- $\tilde{c}^{<t>} = tanh(Wc[\Gamma_r * c^{<t-1>}, x^{<t>}] + bc)$ -->
+![](https://latex.codecogs.com/svg.latex?\tilde{c}^{<t>}=tanh(Wc[\Gamma_r*c^{<t-1>},x^{<t>}]+bc))
 
-$\Gamma_u = \sigma(Wu[c^{<t-1>}, x^{<t>}] + bu)$
+<!-- $\Gamma_u = \sigma(Wu[c^{<t-1>}, x^{<t>}] + bu)$ -->
+![](https://latex.codecogs.com/svg.latex?\Gamma_u=\sigma(Wu[c^{<t-1>},x^{<t>}]+bu))
 
-$\Gamma_r = \sigma(Wr[c^{<t-1>}, x^{<t>}] + br)$
+<!-- $\Gamma_r = \sigma(Wr[c^{<t-1>}, x^{<t>}] + br)$ -->
+![](https://latex.codecogs.com/svg.latex?\Gamma_r=\sigma(Wr[c^{<t-1>},x^{<t>}]+br))
 
-$c^{<t>} = \Gamma_u * \tilde{c}^{<t>} + (1 - \Gamma_u) * \tilde{c}^{<t-1>}$
+<!-- $c^{<t>} = \Gamma_u * \tilde{c}^{<t>} + (1 - \Gamma_u) * \tilde{c}^{<t-1>}$ -->
+![](https://latex.codecogs.com/svg.latex?c^{<t>}=\Gamma_u*\tilde{c}^{<t>}+(1-\Gamma_u)*\tilde{c}^{<t-1>})
 
 ### Architecture
 

@@ -24,25 +24,32 @@ Future information is not available.
 * Activations are passed through states/ timesteps
 * Often *tanh* as activation
   
-$a^{<i>} = g_i (W_{aa} a^{<i-1>} + W_{ax} X^{<i>} + b_a)$
+<!-- $a^{<i>} = g_i (W_{aa} a^{<i-1>} + W_{ax} X^{<i>} + b_a)$ -->
+![](https://latex.codecogs.com/svg.latex?a^{<i>}=g_i(W_{aa}a^{<i-1>}+W_{ax}X^{<i>}+b_a))
 
-$\hat{y}^{<i>} =  g_i (W_{ya} a^i + b_y)$
+<!-- $\hat{y}^{<i>} =  g_i (W_{ya} a^i + b_y)$ -->
+![](https://latex.codecogs.com/svg.latex?\hat{y}^{<i>}=g_i(W_{ya}a^i+b_y))
 
 simplifies to
 
-$a^{<i>} = g_i (W_a [a^{<i-1>}, X^{<i>}] + b_a)$
+<!-- $a^{<i>} = g_i (W_a [a^{<i-1>}, X^{<i>}] + b_a)$ -->
+![](https://latex.codecogs.com/svg.latex?a^{<i>}=g_i(W_a[a^{<i-1>},X^{<i>}]+b_a))
 
-$\hat{y}^{<i>} =  g_i (W_{y} a^i + b_y)$
+<!-- $\hat{y}^{<i>} =  g_i (W_{y} a^i + b_y)$ -->
+![](https://latex.codecogs.com/svg.latex?\hat{y}^{<i>}=g_i(W_{y}a^i+b_y))
 
 where
 
-$W_a = concat((W_{aa}, W_{ax}), axis=1)$
+<!-- $W_a = concat((W_{aa}, W_{ax}), axis=1)$ -->
+![](https://latex.codecogs.com/svg.latex?W_a=concat((W_{aa},W_{ax}),axis=1))
 
-$[a^{<i-1>}, X^{<i>}] = concat((a^{<i-1>}, X^{<i>}), axis=0)$
+<!-- $[a^{<i-1>}, X^{<i>}] = concat((a^{<i-1>}, X^{<i>}), axis=0)$  -->
+![](https://latex.codecogs.com/svg.latex?[a^{<i-1>},X^{<i>}]=concat((a^{<i-1>},X^{<i>}),axis=0))
 
 *Notes on the notation:*
 
-* $W_{ax}$
+<!-- * $W_{ax}$ -->
+* ![](https://latex.codecogs.com/svg.latex?W_{ax})
   * *a* is defined to describe the value calculated by this matrix
   * *x* is defined to describe the value which the matrix is multiplied by 
 
@@ -51,7 +58,8 @@ $[a^{<i-1>}, X^{<i>}] = concat((a^{<i-1>}, X^{<i>}), axis=0)$
 * Individual loss foreach timestep
 * Summary over all timesteps
 
-$L(\hat{y}, y) = \sum_{t=1}^{T_y} L^{<t>}(\hat{y}^{<t>}, y^{<t>})$
+<!-- $L(\hat{y}, y) = \sum_{t=1}^{T_y} L^{<t>}(\hat{y}^{<t>}, y^{<t>})$ -->
+![](https://latex.codecogs.com/svg.latex?L(\hat{y},y)=\sum_{t=1}^{T_y}L^{<t>}(\hat{y}^{<t>},y^{<t>}))
 
 ### Architectures
 
