@@ -39,10 +39,10 @@ The LSTM consisting of three gates and one memory cell.
 ![](https://latex.codecogs.com/svg.latex?\Gamma_u=\sigma(Wu[a^{<t-1>},x^{<t>}]+bu))
 
 <!-- $\Gamma_f = \sigma(Wr[a^{<t-1>}, x^{<t>}] + bf)$ -->
-![](https://latex.codecogs.com/svg.latex?\Gamma_u=\sigma(Wf[a^{<t-1>},x^{<t>}]+bf))
+![](https://latex.codecogs.com/svg.latex?\Gamma_f=\sigma(Wf[a^{<t-1>},x^{<t>}]+bf))
 
 <!-- $\Gamma_o = \sigma(Wo[a^{<t-1>}, x^{<t>}] + bo)$ -->
-![](https://latex.codecogs.com/svg.latex?\Gamma_u=\sigma(Wo[a^{<t-1>},x^{<t>}]+bo))
+![](https://latex.codecogs.com/svg.latex?\Gamma_o=\sigma(Wo[a^{<t-1>},x^{<t>}]+bo))
 
 <!-- $\tilde{c}^{<t>} = tanh(Wc[a^{<t-1>}, x^{<t>}] + bc)$ -->
 ![](https://latex.codecogs.com/svg.latex?\tilde{c}^{<t>}=tanh(Wc[a^{<t-1>},x^{<t>}]+bc))
