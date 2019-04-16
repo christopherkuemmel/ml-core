@@ -16,6 +16,8 @@ To solve the common problem of short-term memory in [RNNs](../rnn/rnn.md), GRUs 
 
 The GRU consisting of two gates and one memory cell.
 
+$a$: activation
+
 $c$: memory cell || hidden state $h$
 
 $\tilde{c}$: candidate for replacing c || $\tilde{h}$
