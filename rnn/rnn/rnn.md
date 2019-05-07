@@ -84,6 +84,24 @@ where
 * Machine translation (splitted in encoder-decoder)
 * Video classification
 
+#### BiRNN
+
+*Bidirectional RNNs* consider the whole input from two directions.
+The benefit is that not only previous information are considered but also following.
+However, this comes with the cost of having the whole sequence at computation time.
+Real-time translation is therefore more complex.
+
+![BiRNN](birnn.png) - [Reference](https://towardsdatascience.com/understanding-bidirectional-rnn-in-pytorch-5bd25a5dd66)
+
+<!-- $\hat{y}^{<i>} =  g_i (W_{y} [\overrightarrow{a}^i, \overleftarrow{a}^i] + b_y)$ -->
+![](https://latex.codecogs.com/svg.latex?\hat{y}^{<i>}=g_i(W_{y}[\overrightarrow{a}^i,\overleftarrow{a}^i]+b_y))
+
+#### Deep RNN
+
+*Deep RNNs* are simply on top stacked RNNs, which will use temporal information as inputs.
+Usually you choose a small amount of layers, because of backpropagation through time there is a very large computational effort to compute stacked RNNs.
+Often Deep RNNs are combined with an classic linear layer or deep net as output layers.
+
 ### Problems
 
 * Long-term dependencies are hard to compute
