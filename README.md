@@ -19,6 +19,9 @@ All the different post, should discuss the ideas in the following topics:
 
 ## MLP/ ANN/ Deep Neural Network
 
+1. TODO: [Linear Regression]
+2. TODO: [ANN/ MLP]
+
 ## CNN - Convolutional Neural Networks
 
 1. TODO: [CNN]
@@ -37,6 +40,8 @@ All the different post, should discuss the ideas in the following topics:
 ## Optimization
 
 1. TODO: [Gradient Descent]
+2. [Greedy Search](./optimization/greedy-search/greedy-search.md)
+3. [BEAM Search](./optimization/beam-search/beam-search.md)
 
 ## Embeddings
 
