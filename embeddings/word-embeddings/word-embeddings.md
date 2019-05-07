@@ -27,7 +27,7 @@ There are different ways to compute word embeddings:
 2. **TF-IDF** - term frequency–inverse document frequency
    * Numerical statistic which reflects how important a word or n-gram is to a document
    * Value increases proportionally to mentions in the document
-   * ![tf-idf](tf-idf.png) - https://skymind.ai/wiki/bagofwords-tf-idf
+   * ![tf-idf](tf-idf.png) - [Reference](https://skymind.ai/wiki/bagofwords-tf-idf)
 3. **Distributional Embeddings**
    * Encapsulate context based on mutual information with other words in the document
    * Global co-references or based on restriced windows
@@ -47,16 +47,25 @@ There are different ways to compute word embeddings:
      * Predicting surrounding context by given word
      * Works well with small amount of the training data, represents well even rare words or phrases
    * "CBOW is faster while skip-gram is slower but does a better job for infrequent words."
-   * ![cbow-skipgram](cbow-skipgram.png) - [Beyond Word Embeddings](https://towardsdatascience.com/beyond-word-embeddings-part-2-word-vectors-nlp-modeling-from-bow-to-bert-4ebd4711d0ec)
+   * ![cbow-skipgram](cbow-skipgram.png) - [Reference](https://towardsdatascience.com/beyond-word-embeddings-part-2-word-vectors-nlp-modeling-from-bow-to-bert-4ebd4711d0ec)
 
     Implementation:
    * Sliding window to get context (neighbor) words
    * For each word, the context words are stored and used in training.
    * Error is calculated as sum over every error from context and selected words
-   * ![Word2Vec-one-hot](word2vec-one-hot.png) - [Word2Vec using Numpy](https://towardsdatascience.com/an-implementation-guide-to-word2vec-using-numpy-and-google-sheets-13445eebd281)
+   * ![Word2Vec-one-hot](word2vec-one-hot.png) - [Reference](https://towardsdatascience.com/an-implementation-guide-to-word2vec-using-numpy-and-google-sheets-13445eebd281)
+
+    Negative Sampling:
+   * Picking the context + words and set the target = true
+   * Then sample k-times context + words and set the target = false
+   * Train based on this sampled set
+   * How to choose k:
+     * k = 5-20 - small dataset
+     * k = 2-5 - larger dataset
 
 3. GloVe
    * Same intuition behind the co-occuring matrix used in distributional embeddings, but uses neural methods to decompose the co-occurrence matrix into more expressive and dense word vectors
+   * Takes frequencies of words into account and weight them
 4. FastText
    * Based on Word2Vec
    * Value of each representation in training are averaged into one vector
@@ -65,6 +74,14 @@ There are different ways to compute word embeddings:
 ## Evaluation
 
 When dealing with vectors, a common way to calculate a similarity score is [cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity).
+
+<!-- $sim(u, v) = \frac{u^T v}{||u||_2 ||v||_2}$ -->
+![](https://latex.codecogs.com/svg.latex?sim(u,v)=\frac{u^Tv}{||u||_2||v||_2})
+
+Other metrics are the square or [eucledian distance](https://en.wikipedia.org/wiki/Euclidean_distance).
+
+<!-- $sim(u, v) = ||u - v||^2$ -->
+![](https://latex.codecogs.com/svg.latex?sim(u,v)=||u-v||^2$)
 
 ## Production
 
