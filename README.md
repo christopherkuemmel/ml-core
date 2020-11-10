@@ -7,10 +7,8 @@ All the different post, should discuss the ideas in the following topics:
 1. Idea - What is the main idea behind this approach?
 2. Improvement - What does it make better than other approaches?
 3. Concept - The concept in more details, and possibly pictures!
-4. Evaluation - TBD
-5. Production - How can this be applied in production and for which use-cases?
-6. References - Links, Guides, Papers, etc.
-7. Examples - Own implementation of the technology
+4. Examples - Own implementation of the technology
+5. References - Links, Guides, Papers, etc.
 
 ## Learning
 
@@ -56,9 +54,11 @@ All the different post, should discuss the ideas in the following topics:
 
 ## Encoder Decoder
 
+1. [Encoder Decoder](encoder_decoder/encoder_decoder.ipynb)
+
 ### Attention
 
-1. [Attention](./attention/attention.md)
+1. [Attention](./encoder_decoder/attention/attention.ipynb)
 
 ### Transformer
 
@@ -79,10 +79,7 @@ All the different post, should discuss the ideas in the following topics:
 1. [Bleu](metrics/bleu/bleu.md)
 2. TODO: [Rogue]
 
-
-
 ## Embeddings
 
 1. [Word Embeddings](./embeddings/word-embeddings/word-embeddings.md)
 2. TODO: [Spatial Embeddings]
-
